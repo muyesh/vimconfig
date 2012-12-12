@@ -1,0 +1,52 @@
+" PHP Manual
+autocmd FileType php :let g:ref_phpmanual_path = "/home/fumitaka/src/php-chunked-xhtml"
+autocmd FileType php :set dictionary=dict/php.dictionary
+autocmd FileType php :set omnifunc=phpcomplete#CompletePHP
+
+" 括弧の補完
+"imap { {}<LEFT>
+"imap [ []<LEFT>
+"imap ( ()<LEFT>
+
+" コマンド補完を開始するキー
+set wildchar=<tab>
+
+" ステータスラインに表示する情報の指定
+set statusline=%n\:%y%F\ \|%{(&fenc!=''?&fenc:&enc).'\|'.&ff.'\|'}%m%r%=
+" ステータスラインの色
+highlight StatusLine   term=NONE cterm=NONE ctermfg=black ctermbg=white
+
+" filetype有効化
+filetype on
+filetype plugin on
+filetype indent on
+
+" 現在行の下線処理
+set cursorline
+highlight CursorLine cterm=underline ctermfg=NONE ctermbg=NONE
+" for GUI
+highlight CursorLine gui=underline guifg=NONE guibg=NONE
+
+set list
+"set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%
+
+" 基本設定
+set number
+set numberwidth=6
+set ruler
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+set showmatch
+set backspace=2
+set ai
+set laststatus=2
+syntax on
+
+" バッファ関連
+map <silent>    <F2>    :bp<cr>
+map <silent>    <F3>    :bn<cr>
+nmap bb :ls<CR>:buf 
